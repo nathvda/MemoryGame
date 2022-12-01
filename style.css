@@ -49,7 +49,7 @@ main{
 .game-container {
 	display: grid;
 	grid-template-columns: repeat(4,min-content);
-	grid-gap: 2em;
+	grid-gap: 1em;
 	margin: auto;
 	grid-template-rows: min-content;
 }

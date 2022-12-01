@@ -25,7 +25,7 @@ let starter = document.querySelector('.starting-game');
 
 let cards = document.getElementById('game-box');
 let userChoice = [];
-let lifeCounter = 10;
+let lifeCounter = 15;
 let pointCounter = 0;
 let score = document.getElementById("score");
 let lives = document.getElementById("lives");
@@ -35,7 +35,7 @@ function randomNumber(){
 }
 
 function resetGame(){
-  lifeCounter = 10;
+  lifeCounter = 15;
   pointCounter = 0;
   cards.innerHTML = "";
   generateCards();

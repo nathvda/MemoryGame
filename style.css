@@ -24,7 +24,7 @@ h1{text-align:left;
 width:100%;
 color:white;
 padding-left:1rem;
-font-size:1.5rem;
+font-size:1.2rem;
 background-color:#CE7777;
 line-height:2;
 border-bottom: 0.5em solid #E8C4C4}
@@ -49,8 +49,10 @@ main{
 
 .game-container {
 	display: grid;
+    padding:0.4em;
+    padding-top:1rem;
 	grid-template-columns: repeat(4,min-content);
-	grid-gap: 1em;
+	grid-gap: 0.8em;
 	margin: auto;
 	grid-template-rows: min-content;
 }
@@ -61,7 +63,7 @@ main{
     right:0;
     padding:1em;
     color:white;
-    font-size:1rem;
+    font-size:0.8rem;
 
 }
 
@@ -81,9 +83,9 @@ main{
 }
 
 #lives{
-    font-size:1.5rem;
+    font-size:1.1rem;
     background-color:#CE7777;
-    padding:1rem;
+    padding:0.5em;
     color:white;
     border-radius:0 0 5px 0;
     width:fit-content;
@@ -95,12 +97,13 @@ main{
 }
 
 #score{
-    width:70vw;
     margin:auto;
+    position:absolute;
+    right:0;
+    top:2.9rem;
     padding:0.5rem;
-    border-radius:1rem;
     text-align:center;
-    font-size:1.5em;
+    font-size:1.2em;
     color:white;
     text-transform: uppercase;
     background-color:#CE7777;

@@ -45,7 +45,6 @@ function resetGame(){
   generateCards();
 }
 
-
 function UpdatePointsLives(){
   score.innerHTML = `Score : ${pointCounter}`;
   lives.innerHTML = `<i class="bi bi-heart-fill"></i> : ${lifeCounter}`;
@@ -64,13 +63,12 @@ UpdatePointsLives();
 userChoice = [];
 setTimeout(() => {cards.classList.toggle('unclickable');},1000);
 
-
 if (pointCounter === 2000 ){
-  saveScore();
-  setTimeout(() => {alert("Bravo ! Tu as gagné!");
+ let haha =  setTimeout(() => {alert("Bravo ! Tu as gagné!");
   alert(`Temps : ${(m < 10) ? `0${m}` : m} : ${(s < 10) ? `0${s}` : s}`);
-  }, 1000);
-  clearInterval(wonderful);
+},1000);
+clearInterval(wonderful);
+clearInterval(haha);
 }
 
  } else { 
@@ -88,7 +86,6 @@ if (lifeCounter === 0){
 }
 }
 
-
 }
 
 let time = document.getElementById("timer");
@@ -96,7 +93,6 @@ let time = document.getElementById("timer");
 let timer = () => {
 
   let counting = new Date().getTime();
-
 
   let difference = counting - startingTime;
   s = Math.floor((difference / 1000) % 60)
@@ -167,18 +163,18 @@ if (selection.id === "game-box"){
 });
 
 
-let Leader = document.getElementById("bestScores");
-let bestScore = [];
-bestScore = JSON.parse(localStorage.getItem("leaderBoard"));
+// let Leader = document.getElementById("bestScores");
+// let bestScore = [];
+// bestScore = JSON.parse(localStorage.getItem("leaderBoard"));
 
-function saveScore(){
-  let today = new Date();
-  let day = today.getDate();
-  let month = today.getMonth();
-  bestScore.push(`${day} / ${month +1} - ${(m < 10) ? `0${m}` : m} : ${(s < 10) ? `0${s}` : s}`);
-  console.log(bestScore);
-  localStorage.setItem("leaderBoard", JSON.stringify(bestScore));
-  Leader.innerHTML = bestScore;
-}
+// function saveScore(){
+//   let today = new Date();
+//   let day = today.getDate();
+//   let month = today.getMonth();
+//   bestScore.push(`${day} / ${month +1} - ${(m < 10) ? `0${m}` : m} : ${(s < 10) ? `0${s}` : s}`);
+//   console.log(bestScore);
+//   localStorage.setItem("leaderBoard", JSON.stringify(bestScore));
+//   Leader.innerHTML = bestScore;
+// }
 
-saveScore();
+// saveScore();

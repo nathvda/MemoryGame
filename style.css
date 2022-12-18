@@ -20,11 +20,12 @@ header{width:100vw;
     box-shadow:0 0.5em 0 hsl(0, 26%, 47%);
 }
 
-h1{text-align:center;
+h1{text-align:left;
 width:100%;
 color:white;
+padding-left:1rem;
+font-size:1.5rem;
 background-color:#CE7777;
-height:2em;
 line-height:2;
 border-bottom: 0.5em solid #E8C4C4}
 
@@ -54,6 +55,16 @@ main{
 	grid-template-rows: min-content;
 }
 
+#timer{
+    position:absolute;
+    top:0;
+    right:0;
+    padding:1em;
+    color:white;
+    font-size:1rem;
+
+}
+
 .hidden{
     position:relative;
 }
@@ -70,9 +81,9 @@ main{
 }
 
 #lives{
-    font-size:2em;
+    font-size:1.5rem;
     background-color:#CE7777;
-    padding:1em;
+    padding:1rem;
     color:white;
     border-radius:0 0 5px 0;
     width:fit-content;
@@ -84,9 +95,15 @@ main{
 }
 
 #score{
-    width:100vw;
+    width:70vw;
+    margin:auto;
+    padding:0.5rem;
+    border-radius:1rem;
     text-align:center;
-    font-size:2em;
+    font-size:1.5em;
+    color:white;
+    text-transform: uppercase;
+    background-color:#CE7777;
 }
 
 .unclickable{pointer-events:none;}

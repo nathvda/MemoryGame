@@ -22,6 +22,10 @@ const images = [
 ]
 
 let starter = document.querySelector('.starting-game');
+let startingTime;
+let wonderful;
+let m;
+let s;
 
 let cards = document.getElementById('game-box');
 let userChoice = [];
@@ -50,8 +54,6 @@ function UpdatePointsLives(){
 function checkImage(){
   let firstCard = userChoice[0];
   let secondCard = userChoice[1];
-  console.log(firstCard);
-  console.log(secondCard);
 
   let doc1 = document.getElementById(`${firstCard}`).firstChild;
   let doc2 = document.getElementById(`${secondCard}`).firstChild;
@@ -65,6 +67,8 @@ setTimeout(() => {cards.classList.toggle('unclickable');},1000);
 
 if (pointCounter === 2000 ){
   alert("Bravo ! Tu as gagné!");
+  alert(`Temps : ${(m < 10) ? `0${m}` : m} : ${(s < 10) ? `0${s}` : s}`);
+  clearInterval(wonderful);
 }
 
  } else { 
@@ -85,7 +89,26 @@ if (lifeCounter === 0){
 
 }
 
+let time = document.getElementById("timer");
+
+let timer = () => {
+
+  let counting = new Date().getTime();
+
+
+  let difference = counting - startingTime;
+  s = Math.floor((difference / 1000) % 60)
+  m = Math.floor((difference / (1000 * 60) % 60));
+  time.innerHTML = `${(m < 10) ? `0${m}` : m} : ${(s < 10) ? `0${s}` : s}`;
+
+}
+
+
+
 function generateCards() {
+
+  startingTime = new Date().getTime();
+  wonderful = setInterval(timer, 1000);
 
 /*  let wonderful = images.sort((a,b) => .5 - Math.random());*/
 
@@ -128,14 +151,12 @@ cards.addEventListener('click', (event) => {
 const selection = event.target;
 
 if (selection.id === "game-box"){
-  console.log("failed to select a card");
 } else if (userChoice.length < 1){
   selection.classList.remove('hidden');
   userChoice.push(selection.id);
 
 } else {
       selection.classList.remove('hidden');
-      console.log(userChoice);
       userChoice.push(selection.id);
       cards.classList.toggle('unclickable');
       checkImage();

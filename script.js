@@ -66,11 +66,11 @@ setTimeout(() => {cards.classList.toggle('unclickable');},1000);
 
 
 if (pointCounter === 2000 ){
-  clearInterval(wonderful);
   saveScore();
   setTimeout(() => {alert("Bravo ! Tu as gagné!");
   alert(`Temps : ${(m < 10) ? `0${m}` : m} : ${(s < 10) ? `0${s}` : s}`);
   }, 500);
+  clearInterval(wonderful);
 }
 
  } else { 

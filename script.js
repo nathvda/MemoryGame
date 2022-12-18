@@ -69,7 +69,7 @@ if (pointCounter === 2000 ){
   saveScore();
   setTimeout(() => {alert("Bravo ! Tu as gagné!");
   alert(`Temps : ${(m < 10) ? `0${m}` : m} : ${(s < 10) ? `0${s}` : s}`);
-  }, 500);
+  }, 1000);
   clearInterval(wonderful);
 }
 
